@@ -158,10 +158,6 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="numSerie">Número de Série:</label>
-        <input type="text" id="numSerie" required>
-      </div>
-      <div class="form-group">
         <label for="dataFabricacao">Data de Fabricação:</label>
         <div class="input-with-checkbox">
             <input type="date" id="dataFabricacao" required>
@@ -527,7 +523,7 @@ function gerarLaudo() {
     // "obsTecnicas" foi removido da validação
     const camposObrigatorios = {
         cliente: "Cliente", raId: "RA/ID", dataEntrada: "Data de Entrada", modelo: "Modelo do Equipamento",
-        numSerie: "Número de Série", codDefeito: "Defeito Apresentado", codCausa: "Causa",
+        codDefeito: "Defeito Apresentado", codCausa: "Causa",
         garantia: "Garantia"
     };
     const dataFabricacaoInput = document.getElementById('dataFabricacao');
@@ -569,7 +565,6 @@ function gerarLaudo() {
         equipamento: modeloSelecionado,
         familiaEquipamento: infoModelo.familia,
         codigoEquipamento: infoModelo.codigo,
-        numSerie: document.getElementById("numSerie").value,
         dataFabricacao: dataFabricacaoValue,
         defeito: `${codDefeitoSelecionado} - ${nomeDefeito}`,
         causa: `${codCausaSelecionado} - ${nomeCausa}`,
@@ -679,7 +674,6 @@ function gerarLaudo() {
                 <div class="info-item"><span>Data de Fabricação:</span> ${laudoData.dataFabricacao}</div>
                 <div class="info-item"><span>Equipamento:</span> ${laudoData.equipamento} (${laudoData.codigoEquipamento})</div>
                 <div class="info-item"><span>Família:</span> ${laudoData.familiaEquipamento}</div>
-                <div class="info-item"><span>Nº de Série:</span> ${laudoData.numSerie}</div>
                 <div class="info-item"><span>Garantia:</span> ${laudoData.garantia}</div>
                 <div class="info-item full-width"><span>Defeito Apresentado:</span> ${laudoData.defeito}</div>
                 <div class="info-item full-width"><span>Causa Provável:</span> ${laudoData.causa}</div>
